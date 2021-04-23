@@ -13,6 +13,17 @@ terraform {
   }
 }
 
+
+terraform {
+  backend "azurerm" {
+    container_name       = "terraform-state"
+    key                  = "terraform.tfstate"
+    resource_group_name  = "terraform-state-rg"
+    storage_account_name = "vinstoragetf"
+  }
+}
+
+
 /**
 * The features block is required and should be used when possible. Read more about the features
 * block here: https://www.terraform.io/docs/providers/azurerm/index.html#features-1
