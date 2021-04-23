@@ -30,7 +30,7 @@ variable "eventhub_partition_count" {
 }
 
 variable "tags" {
-  type = map
+  type = map(any)
 }
 
 variable "eventhub_zone_redundant" {
@@ -78,7 +78,7 @@ variable "whitelist_ips" {
 }
 
 variable "eventhub_capture_interval_in_seconds" {
-  
+
 }
 
 variable "eventhub_capture_encoding_type" {
@@ -87,40 +87,40 @@ variable "eventhub_capture_encoding_type" {
 
 
 variable "eventhub_capture_archive_name_format" {
-  
+
 }
 
 variable "eventhub_capture_enabled" {
-  
+
 }
 
 variable "eventhub_capture_skip_empty_archives" {
-  
+
 }
 
 
 variable "eventhub_capture_destination_name" {
-  
+
 }
 
 variable "storage_account_name" {
-  
+
 }
 
 variable "storage_account_tier" {
-  
+
 }
 
 variable "storage_account_type" {
-  
+
 }
 
 variable "storage_container_name" {
-  
+
 }
 
 variable "storage_container_access_type" {
-  
+
 }
 
 
