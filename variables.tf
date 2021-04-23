@@ -1,6 +1,5 @@
 variable "resource_group_name" {
   description = "value"
-
 }
 
 variable "location" {
