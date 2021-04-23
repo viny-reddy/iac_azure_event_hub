@@ -1,5 +1,5 @@
 resource_group_name        = "demo-eventhub"
-eventhub_namespace_name    = "demo-namespace_new"
+eventhub_namespace_name    = "demo-namespace-new"
 eventhub_name              = "demo-eventhub"
 eventhub_message_retention = 1
 eventhub_zone_redundant    = true
