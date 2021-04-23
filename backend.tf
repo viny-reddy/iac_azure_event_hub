@@ -20,7 +20,11 @@ terraform {
     key                  = "terraform.tfstate"
     resource_group_name  = "terraform-state-rg"
     storage_account_name = "vinstoragetf"
+    subscription_id      = "dfb2b1a3-4f3b-4af4-b5c2-af6b232b9b1c"
+
   }
+  
+  
 }
 
 
