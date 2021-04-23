@@ -11,7 +11,7 @@ tags = {
 }
 create_eventhub_authorization_rule   = true
 create_custom_eventhub_group         = true
-eventhub_consumer_group              = "demo-consumer-group"
+eventhub_consumer_group              = "demo-consumer-group-1"
 eventhub_authorization_rule_manage   = true
 eventhub_authorization_rule_send     = true
 eventhub_authorization_rule_listen   = true
