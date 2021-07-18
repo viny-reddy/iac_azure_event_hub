@@ -62,5 +62,17 @@ module "eventhub_module" {
 }
 
 
+module "storage_account1" {
+  source               = "github.com/vinaymanikyam/iac_terraform_modules.git/storage_account"
+  storage_account_name = var.storage_account_name
+  resource_group_name  = module.rg_module.az_resource_group_name
+  location             = var.location
+  storage_account_tier = var.storage_account_tier
+  storage_account_type = var.storage_account_type
+  tags                 = var.tags
+}
+
+
+
 
 
