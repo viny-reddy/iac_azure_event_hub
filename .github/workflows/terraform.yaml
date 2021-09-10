@@ -6,11 +6,11 @@ on:
   workflow_dispatch:
     inputs:
       name:
-        description: 'Person to greet'
+        description: 'namespace'
         required: true
         default: 'Mona the Octocat'
       home:
-        description: 'location'
+        description: 'model'
         required: true
         default: 'The Octoverse'
 
