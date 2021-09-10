@@ -1,42 +1,64 @@
-name: Terraform
+# name: Terraform
 
+
+name: Manually triggered workflow
 on:
   workflow_dispatch:
-  #push:
-    #branches: [ main ]
-  #pull_request:
-    #branches: [ main ]
+    inputs:
+      name:
+        description: 'Person to greet'
+        required: true
+        default: 'Mona the Octocat'
+      home:
+        description: 'location'
+        required: false
+        default: 'The Octoverse'
 
 jobs:
-
-  terraform:
-    name: 'Terraform'
+  say_hello:
     runs-on: ubuntu-latest
-    env:
-      ARM_CLIENT_ID: ${{secrets.TF_ARM_CLIENT_ID}}
-      ARM_CLIENT_SECRET: ${{secrets.TF_ARM_CLIENT_SECRET}}
-      ARM_SUBSCRIPTION_ID: ${{secrets.TF_ARM_SUBSCRIPTION_ID}}
-      ARM_TENANT_ID: ${{secrets.TF_ARM_TENANT_ID}}
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v1
-        with:
-          terraform_version: 0.14.0
-      # - name: Terraform Format
-      #   id: fmt
-      #   run: terraform fmt -check
-      - name: Terraform Init
-        id: init
-        run: terraform init 
-      - name: Terraform Plan
-        id: plan
-        #if: github.event_name == 'pull_request'
-        run: terraform plan -no-color --var-file=dev.tfvars
-        continue-on-error: true
-      - name: Terraform Apply
-        id: apply
-        #if: github.event_name == 'pull_request'
-        run: terraform apply -no-color --var-file=dev.tfvars --auto-approve
-        continue-on-error: true
+      - run: |
+          echo "Hello ${{ github.event.inputs.name }}!"
+          echo "- in ${{ github.event.inputs.home }}!"
+
+# on:
+#   workflow_dispatch:
+#     inputs:
+#       name:   
+#         desciption: 
+  
+
+# jobs:
+
+#   terraform:
+#     name: 'Terraform'
+#     runs-on: ubuntu-latest
+#     env:
+#       ARM_CLIENT_ID: ${{secrets.TF_ARM_CLIENT_ID}}
+#       ARM_CLIENT_SECRET: ${{secrets.TF_ARM_CLIENT_SECRET}}
+#       ARM_SUBSCRIPTION_ID: ${{secrets.TF_ARM_SUBSCRIPTION_ID}}
+#       ARM_TENANT_ID: ${{secrets.TF_ARM_TENANT_ID}}
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v2
+#       - name: Setup Terraform
+#         uses: hashicorp/setup-terraform@v1
+#         with:
+#           terraform_version: 0.14.0
+#       # - name: Terraform Format
+#       #   id: fmt
+#       #   run: terraform fmt -check
+#       - name: Terraform Init
+#         id: init
+#         run: terraform init 
+#       - name: Terraform Plan
+#         id: plan
+#         #if: github.event_name == 'pull_request'
+#         run: terraform plan -no-color --var-file=dev.tfvars
+#         continue-on-error: true
+#       - name: Terraform Apply
+#         id: apply
+#         #if: github.event_name == 'pull_request'
+#         run: terraform apply -no-color --var-file=dev.tfvars --auto-approve
+#         continue-on-error: true
