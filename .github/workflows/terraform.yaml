@@ -8,11 +8,11 @@ on:
       name:
         description: 'namespace'
         required: true
-        default: 'Mona the Octocat'
+        default: ci
       home:
         description: 'model'
         required: true
-        default: 'The Octoverse'
+        default: ' '
 
 jobs:
   say_hello:
