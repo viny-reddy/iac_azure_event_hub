@@ -11,7 +11,7 @@ on:
         default: 'Mona the Octocat'
       home:
         description: 'location'
-        required: false
+        required: true
         default: 'The Octoverse'
 
 jobs:
