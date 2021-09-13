@@ -12,7 +12,7 @@ on:
       home:
         description: 'model'
         required: true
-        default: ' '
+        default: 'enter the model'
 
 jobs:
   say_hello:
