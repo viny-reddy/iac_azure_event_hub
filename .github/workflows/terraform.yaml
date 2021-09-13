@@ -10,9 +10,9 @@ on:
         required: true
         default: ci
       home:
-        description: 'model'
+        description: 'enter the model to full-refresh'
         required: true
-        default: 'enter the model'
+        default: ' '
 
 jobs:
   say_hello:
