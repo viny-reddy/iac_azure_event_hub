@@ -2,17 +2,24 @@
 
 
 name: Manually triggered workflow
+
 on:
-  workflow_dispatch:
-    inputs:
-      name:
-        description: 'namespace'
-        required: true
-        default: ci
-      home:
-        description: 'enter the model to full-refresh'
-        required: true
-        default: ' '
+  # Trigger the workflow on push or pull request,
+  # but only for the main branch
+  push:
+    branches:
+      - main
+# on:
+#   workflow_dispatch:
+#     inputs:
+#       name:
+#         description: 'namespace'
+#         required: true
+#         default: ci
+#       home:
+#         description: 'enter the model to full-refresh'
+#         required: true
+#         default: ' '
 
 jobs:
   say_hello:
