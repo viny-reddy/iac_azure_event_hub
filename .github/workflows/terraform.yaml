@@ -33,7 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "${PR_NUMBER}"
+          echo "GITHUB_SHA: ${GITHUB_SHA}"
 
 # on:
 #   workflow_dispatch:
