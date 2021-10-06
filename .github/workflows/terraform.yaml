@@ -9,6 +9,13 @@ on:
   push:
     branches:
       - main
+      
+      
+      
+env:
+  PR_NUMBER: ${{ github.event.number }}
+  
+
 # on:
 #   workflow_dispatch:
 #     inputs:
@@ -26,6 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
+          echo PR_NUMBER
           echo "Hello ${{ github.event.inputs.name }}"
           echo "- in ${{ github.event.inputs.home }}"
 
