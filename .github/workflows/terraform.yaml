@@ -33,9 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo PR_NUMBER
-          echo "Hello ${{ github.event.inputs.name }}"
-          echo "- in ${{ github.event.inputs.home }}"
+          echo "${PR_NUMBER}"
 
 # on:
 #   workflow_dispatch:
