@@ -7,14 +7,16 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
+    
+      - name: view pr number
+        run: | 
+          eco "2PR number = ${{ github.event.pull_request.number }}"
       - name: view the PR number
         run: |
           echo "PR number = ${{ github.event.pull_request.number }}"
           echo "PR number = ${{ env.PR_NUMBER }}"
           
-      - name: view pr number
-        run: | 
-          eco "2PR number = ${{ github.event.pull_request.number }}"
+      
 
 
 # name: Terraform
