@@ -13,7 +13,7 @@ jobs:
           echo "PR number = ${{ env.PR_NUMBER }}"
           
       - run: |
-          echo "GITHUB_SHA: ${GITHUB_SHA}"
+          echo "PR number = ${{ github.event.pull_request.number }}"
 
 
 # name: Terraform
