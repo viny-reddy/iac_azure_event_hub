@@ -1,17 +1,45 @@
+on: pull_request
+
+env:
+  PR_NUMBER: ${{ github.event.pull_request.number }}
+
+jobs:
+  job1:
+    . . .
+    steps:
+      - name: view the PR number
+        run: |
+          echo "PR number = ${{ github.event.pull_request.number }}"
+          echo "PR number = ${{ env.PR_NUMBER }}"
+
+
 # name: Terraform
 
 
-name: Manually triggered workflow
+# name: Manually triggered workflow
 
-on:
-  # Trigger the workflow on push or pull request,
-  # but only for the main branch
+# on:
+#   # Trigger the workflow on push or pull request,
+#   # but only for the main branch
   
-  pull_request:
-    branches: [ develop ]
-#   push:
-#     branches:
-#       - develop
+#   pull_request:
+#     branches: [ develop ]
+# #   push:
+# #     branches:
+# #       - develop
+
+# env: 
+#   PR_NUMBER: ${{ github.event.pull_request.number }}
+
+
+
+          
+#jobs:
+#   say_hello:
+#     runs-on: ubuntu-latest
+#     steps:
+# #       - run: |
+# #           echo "GITHUB_SHA: ${GITHUB_SHA}"
     
   
 
@@ -27,25 +55,25 @@ on:
 #         required: true
 #         default: ' '
 
-jobs:
-  say_hello:
-    runs-on: ubuntu-latest
-    steps:
-#       - run: |
-#           echo "GITHUB_SHA: ${GITHUB_SHA}"
+# jobs:
+#   say_hello:
+#     runs-on: ubuntu-latest
+#     steps:
+# #       - run: |
+# #           echo "GITHUB_SHA: ${GITHUB_SHA}"
           
-      - uses: actions/checkout@v1
-      # Find the PR associated with this push, if there is one.
-      - uses: jwalton/gh-find-current-pr@v1
-        id: findPr
-        with:
-          # Can be "open", "closed", or "all".  Defaults to "open".
-          state: all
-      # This will echo "Your PR is 7", or be skipped if there is no current PR.
-      - run: echo "Your PR is ${PR}"
-        if: success() && steps.findPr.outputs.number
-        env:
-          PR: ${{ steps.findPr.outputs.pr }}
+#       - uses: actions/checkout@v1
+#       # Find the PR associated with this push, if there is one.
+#       - uses: jwalton/gh-find-current-pr@v1
+#         id: findPr
+#         with:
+#           # Can be "open", "closed", or "all".  Defaults to "open".
+#           state: all
+#       # This will echo "Your PR is 7", or be skipped if there is no current PR.
+#       - run: echo "Your PR is ${PR}"
+#         if: success() && steps.findPr.outputs.number
+#         env:
+#           PR: ${{ steps.findPr.outputs.pr }}
 
 # on:
 #   workflow_dispatch:
