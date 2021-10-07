@@ -5,7 +5,7 @@ env:
 
 jobs:
   job1:
-    . . .
+    runs-on: ubuntu-latest
     steps:
       - name: view the PR number
         run: |
