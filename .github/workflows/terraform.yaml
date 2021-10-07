@@ -12,8 +12,9 @@ jobs:
           echo "PR number = ${{ github.event.pull_request.number }}"
           echo "PR number = ${{ env.PR_NUMBER }}"
           
-      - run: |
-          echo "PR number = ${{ github.event.pull_request.number }}"
+      - name: view pr number
+        run: | 
+          eco "2PR number = ${{ github.event.pull_request.number }}"
 
 
 # name: Terraform
