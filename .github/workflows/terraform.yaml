@@ -12,11 +12,7 @@ on:
 #   push:
 #     branches:
 #       - develop
-      
-      
-      
-env:
-  PR_NUMBER: ${{ github.event.number }}
+    
   
 
 # on:
@@ -35,8 +31,8 @@ jobs:
   say_hello:
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          echo "GITHUB_SHA: ${GITHUB_SHA}"
+#       - run: |
+#           echo "GITHUB_SHA: ${GITHUB_SHA}"
           
       - uses: actions/checkout@v1
       # Find the PR associated with this push, if there is one.
@@ -44,7 +40,7 @@ jobs:
         id: findPr
         with:
           # Can be "open", "closed", or "all".  Defaults to "open".
-          state: closed
+          state: all
       # This will echo "Your PR is 7", or be skipped if there is no current PR.
       - run: echo "Your PR is ${PR}"
         if: success() && steps.findPr.outputs.number
