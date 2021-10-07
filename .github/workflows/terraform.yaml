@@ -14,7 +14,7 @@ jobs:
           
       - name: view pr number
         run: | 
-          eco "2PR number = ${{ github.event.pull_request.number }}"
+          eco "2PR number"
 
 
 # name: Terraform
