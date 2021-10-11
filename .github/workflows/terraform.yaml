@@ -11,10 +11,11 @@ jobs:
       - name: view pr number
         run: | 
           eco "2PR number = ${{ github.event.pull_request.number }}"
-      - name: view the PR number
-        run: |
-          echo "PR number = ${{ github.event.pull_request.number }}"
-          echo "PR number = ${{ env.PR_NUMBER }}"
+          echo CI.PR_NUMBER
+#      - name: view the PR number
+ #       run: |
+ #          echo "PR number = ${{ github.event.pull_request.number }}"
+ #          echo "PR number = ${{ env.PR_NUMBER }}"
           
       
 
