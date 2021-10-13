@@ -16,7 +16,7 @@ jobs:
         env:
           FIRST_NAME: Mona
           middle_name: The
-          Last_Name: Octocat
+          Last_Name: CI_${{ github.event.pull_request.number }}
     
       - name: view pr number
         run: | 
