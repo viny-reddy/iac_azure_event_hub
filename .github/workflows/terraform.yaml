@@ -1,11 +1,13 @@
 on: pull_request
 
-env:
-  PR_NUMBER: ${{ github.event.pull_request.number }}
+
 
 jobs:
   job1:
     runs-on: ubuntu-latest
+    env:
+      PR_NUMBER: ${{ github.event.pull_request.number }}
+      DAY_OF_WEEK: Mon
     steps:
     
       - name: "Hello world when it's Monday"
