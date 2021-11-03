@@ -1,3 +1,5 @@
+testtesttest
+
 # iac_azure_event_hub
 
 Terraform script to create an eventhub namespace and eventhub entity in Azure.
