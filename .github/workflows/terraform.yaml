@@ -10,7 +10,7 @@ jobs:
       DAY_OF_WEEK: Mon
     steps:
     
-      - name: "Hello world when it's Monday"
+      - name: "build"
         if: ${{ env.DAY_OF_WEEK == 'Mon' }}
         run: echo "Hello $FIRST_NAME $middle_name $Last_Name, today is Monday!"
         env:
@@ -18,10 +18,12 @@ jobs:
           middle_name: The
           Last_Name: CI_${{ github.event.pull_request.number }}
     
-      - name: view pr number
+      - name: test
         run: | 
           echo "2PR number = CI_${{ github.event.pull_request.number }}"
 #          echo "${{ github.event.pull_request.number }}"
+
+      - name: deploy
   #    - name: view the PR number
   #      run: |
    #        echo "PR number = CI_${{ github.event.pull_request.number }}"
